@@ -1,0 +1,65 @@
+.workStages__box {
+  text-align: center;
+}
+
+.workStages__stages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.workStages__stage {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.workStages__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background: #abc;
+  margin: 20px auto;
+  border-radius: 50%;
+  box-shadow: inset 0px -20px 75px #1c7ade, 0px 30px 40px -15px white;
+  margin-bottom: 20px;
+}
+
+.workStages__icon img {
+  width: 60%;
+  object-fit: cover;
+}
+
+.workStages__info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.workStages__time {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.workStages__description {
+  color: #343434;
+  width: 80%;
+}
+
+@media (max-width: 768px) {
+  .workStages__stage {
+    width: 100%;
+  }
+
+  .workStages__icon {
+    width: 70px;
+    height: 70px;
+    box-shadow: inset 0px -10px 37px #1c7ade, 0px 15px 20px -8px white;
+  }
+}

@@ -1,0 +1,155 @@
+@import "root";
+@import "mixins";
+
+.portfolio {
+  &__box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__description {
+    @extend %section-text;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  &__slide {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    border-top: 1px solid rgba(63, 63, 63, 0.6);
+    border-bottom: 1px solid rgba(63, 63, 63, 0.6);
+    padding: 50px 0;
+  }
+
+  &__img {
+    width: 50% !important;
+    margin-right: 120px;
+    object-fit: cover;
+    max-height: 400px;
+  }
+
+  &__info {
+    width: calc(50% - 120px);
+  }
+
+  &__city {
+    color: #3f3f3f;
+    opacity: 0.7;
+    margin-bottom: 20px;
+  }
+
+  &__slideTitle {
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    list-style-type: none;
+
+    &:before {
+      content: "– ";
+    }
+  }
+
+  &__characteristics {
+    margin-bottom: 55px;
+  }
+
+  &__characteristic {
+    margin-bottom: 10px;
+  }
+
+  &__characteristicTitle {
+    font-weight: 500;
+  }
+
+  &__btn {
+    @extend %transparent-btn;
+  }
+
+  &__miniCarousel {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 0 auto;
+    width: 90%;
+    position: relative;
+    white-space: nowrap;
+    overflow: auto;
+    padding-bottom: 10px;
+
+    @extend %scrollbar;
+    &::-webkit-scrollbar {
+      height: 5px;
+    }
+  }
+
+  &__miniPhoto {
+    width: 150px !important;
+    display: inline-block !important;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 15px;
+    cursor: zoom-in;
+  }
+}
+
+@media (max-width: 1024px) {
+  .portfolio {
+    &__slide {
+      flex-wrap: wrap;
+      padding: 40px 0;
+    }
+
+    &__miniControls {
+      bottom: calc(40px + (150px / 2));
+    }
+
+    &__img {
+      width: 70% !important;
+      margin-bottom: 25px;
+    }
+
+    &__info {
+      width: 100%;
+    }
+
+    &__characteristics {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .portfolio {
+    &__slide {
+      flex-wrap: wrap;
+      padding: 30px 0;
+    }
+
+    &__img {
+      width: 100% !important;
+      margin-right: 0;
+    }
+
+    &__characteristics {
+      margin-bottom: 30px;
+    }
+
+    &__description {
+      margin-bottom: 40px;
+    }
+  }
+}

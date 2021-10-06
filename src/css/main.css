@@ -1,0 +1,256 @@
+@charset "UTF-8";
+
+.modal {
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5%;
+  min-width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-left: 1px solid #f2f2f2;
+  background: #1c7ade;
+}
+
+.modal__close {
+  position: absolute;
+  right: 5%;
+  top: 3%;
+  height: 20px;
+  width: 20px;
+  background: white;
+  padding: 15px;
+}
+
+.modal__close::after,
+.modal__close::before {
+  transition: background-color 0.3s;
+  content: "";
+  width: 56%;
+  height: 0px;
+  background-color: #000;
+  position: absolute;
+  top: 48%;
+  right: calc(50% - 10px);
+}
+
+.modal__close::after {
+  transform: rotate(45deg);
+}
+
+.modal__close::before {
+  transform: rotate(135deg);
+}
+
+.modal__close:hover::after,
+.modal__close:hover::before {
+  background-color: #1c7ade;
+}
+
+/*Кнопка меню*/
+
+/*В разметке обязательно должна иметь внутренний span */
+
+/*<button class="burger"><span></span></button>*/
+
+html {
+  font-size: 16px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  cursor: default;
+  color: #000000;
+}
+
+section {
+  position: relative;
+  margin-bottom: 100px;
+}
+
+p {
+  color: #fff;
+  line-height: 1.4rem;
+  letter-spacing: 0.09em;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper {
+  width: calc(100% - 50px);
+  margin: 0 auto;
+  max-width: 1340px;
+}
+
+a {
+  color: #1c7ade;
+  display: inline-block;
+  text-decoration: none;
+}
+
+textarea,
+button,
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+textarea[disabled],
+button[disabled],
+input[disabled] {
+  cursor: default;
+  opacity: 0.7;
+}
+
+button {
+  cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  font-size: 1rem;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.popup {
+  display: none;
+  background-color: #222;
+  position: fixed;
+  z-index: 100500;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  opacity: 0;
+  border-radius: 5px;
+  padding: 10px 10px;
+  transition: all 0.5s ease;
+  color: #fff;
+  font-size: 16px;
+}
+
+.popup.active {
+  opacity: 1;
+  display: block;
+}
+
+.popup.error {
+  background-color: blue;
+}
+
+.popup.success {
+  background-color: #4caf50;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.modal__box {
+  padding: 2rem 3rem;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #f4f4f4;
+  overflow: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.owl-prev,
+.owl-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #1c7ade;
+  padding: 0;
+  background-color: #1c7ade;
+  color: #f4f4f4;
+}
+
+.owl-prev:hover,
+.owl-next:hover {
+  background-color: #f4f4f4;
+  color: #1c7ade;
+}
+
+.owl-prev:hover svg path,
+.owl-next:hover svg path {
+  fill: #1c7ade;
+}
+
+.owl-prev {
+  transform: rotate(180deg);
+  margin-right: 10px;
+}
+
+h1 {
+  font-size: 46px;
+  font-weight: 500;
+  line-height: 3.3rem;
+}
+
+h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 414px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 25px;
+    margin-bottom: 35px;
+  }
+
+  section {
+    margin-bottom: 50px;
+  }
+}

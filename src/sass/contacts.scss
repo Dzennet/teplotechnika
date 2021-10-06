@@ -1,0 +1,155 @@
+@import "root";
+@import "mixins";
+
+.contacts {
+  background: url(../img/contacts/contacts_bg.png)
+    linear-gradient(
+      180deg,
+      rgba(19, 104, 193, 0.6) 0%,
+      rgba(21, 110, 204, 0.6) 100%
+    )
+    no-repeat;
+  background-size: 100%;
+  margin-bottom: 0;
+
+  &__box {
+    padding-top: 60px;
+    padding-bottom: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__content {
+    display: flex;
+    width: 80%;
+  }
+
+  &__request {
+    background-color: white;
+    width: 60%;
+  }
+
+  &__block {
+    padding: 40px;
+    &:first-child {
+      border-radius: 3px 0 0 3px;
+    }
+
+    &:last-child {
+      border-radius: 0 3px 3px 0;
+    }
+  }
+
+  &__requestTitle {
+    margin-bottom: 15px;
+    color: $accent;
+  }
+
+  &__requestDescription {
+    color: $black-text;
+    margin-bottom: 25px;
+  }
+
+  &__input {
+    border-bottom: 1px solid $accent;
+    margin-bottom: 10px;
+    width: 70%;
+    height: 45px;
+
+    &:focus {
+      box-shadow: 0 0 15px #e316b0;
+    }
+
+    &._error {
+      box-shadow: 0 0 15px red;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__btn {
+    @extend %blue-btn;
+    background-color: $accent;
+    margin-top: 30px;
+    &:hover {
+      background-color: darken($color: $accent, $amount: 10);
+    }
+  }
+
+  &__title {
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  &__connect {
+    background-color: $accent;
+    width: 40%;
+  }
+
+  &__description {
+    margin-bottom: 25px;
+    color: white;
+  }
+
+  &__socials {
+    margin-bottom: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.09em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    svg {
+      width: 34px;
+      height: 34px;
+      margin-right: 10px;
+    }
+
+    &--phone {
+      color: white;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .contacts {
+    &__content {
+      flex-wrap: wrap;
+      width: 60%;
+    }
+
+    &__block {
+      width: 100%;
+      padding: 30px;
+      &:first-child {
+        border-radius: 3px 3px 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 3px 3px;
+      }
+    }
+
+    &__input {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 414px) {
+  .contacts {
+    &__content {
+      width: 100%;
+    }
+
+    &__socials {
+      font-size: 14px;
+    }
+  }
+}

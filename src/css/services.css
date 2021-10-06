@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+/*Кнопка меню*/
+
+/*В разметке обязательно должна иметь внутренний span */
+
+/*<button class="burger"><span></span></button>*/
+
+.services__description {
+  color: #343434;
+  margin-bottom: 50px;
+  width: 500px;
+  max-width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.services__cardBtn,
+.services__more {
+  border-radius: 3px;
+  padding: 20px 50px;
+  font-weight: bold;
+  font-size: 16px;
+  width: 220px;
+  color: white;
+  background-color: #49749e;
+  transition: all 0.3s ease;
+}
+
+.services__cardBtn:hover,
+.services__more:hover {
+  background-color: #41678d;
+}
+
+.services__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.services__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.services__card {
+  width: calc((100% / 3 - 40px));
+  background-color: #f4f4f4;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.services__card::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: #49749e;
+  bottom: 0;
+  right: 0;
+}
+
+.services__card:hover .services__cardText,
+.services__card:hover .services__cardTitle {
+  transform: translate(0, -80px);
+  opacity: 0;
+}
+
+.services__card:hover .services__cardBtn {
+  transform: translate(0, -80px);
+  opacity: 1;
+}
+
+.services__cardInfo {
+  padding: 30px 25px 40px 25px;
+}
+
+.services__cardText {
+  color: #343434;
+  margin-top: 20px;
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+
+.services__cardImg {
+  width: 100%;
+  height: 217px;
+  object-fit: cover;
+}
+
+.services__cardTitle {
+  color: #343434;
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+
+.services__cardBtn {
+  opacity: 0;
+  transition: all 0.5s ease;
+  width: 100% !important;
+  margin-top: 20px;
+}
+
+.services__more {
+  margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .services__card {
+    width: calc((100% / 2 - 20px));
+  }
+}
+
+@media (max-width: 768px) {
+  .services__card {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 414px) {
+  .services__cardInfo {
+    padding: 30px 25px 25px 25px;
+  }
+
+  .services__more {
+    width: 100%;
+  }
+}

@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+/*Кнопка меню*/
+
+/*В разметке обязательно должна иметь внутренний span */
+
+/*<button class="burger"><span></span></button>*/
+
+.banner__btn {
+  border-radius: 3px;
+  padding: 20px 50px;
+  font-weight: bold;
+  font-size: 16px;
+  width: 220px;
+  color: #49749e;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.banner__btn:hover {
+  background-color: #d9d9d9;
+}
+
+.banner {
+  background: url(../img/banner/bgc.png) linear-gradient(102.26deg, #1368c1 3.02%, rgba(21, 110, 204, 0.53) 101.23%) no-repeat;
+  background-size: 100%;
+}
+
+.banner__box {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0px 150px 0px;
+}
+
+.banner__title {
+  color: white;
+  font-weight: 900;
+  margin-bottom: 30px;
+  width: 60%;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.banner__description {
+  width: 50%;
+  margin-bottom: 50px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 1024px) {
+  .banner__box {
+    padding: 70px 0 100px;
+  }
+
+  .banner__description {
+    width: 80%;
+  }
+}
+
+@media (max-width: 414px) {
+  .banner__description {
+    width: 100%;
+  }
+
+  .banner__title {
+    width: 100%;
+  }
+}

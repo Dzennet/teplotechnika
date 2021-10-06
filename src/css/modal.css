@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+.modal-picture__close {
+  position: absolute;
+  right: 5%;
+  top: 3%;
+  height: 20px;
+  width: 20px;
+  background: white;
+  padding: 15px;
+}
+
+.modal-picture__close::after,
+.modal-picture__close::before {
+  transition: background-color 0.3s;
+  content: "";
+  width: 56%;
+  height: 0px;
+  background-color: #000;
+  position: absolute;
+  top: 48%;
+  right: calc(50% - 10px);
+}
+
+.modal-picture__close::after {
+  transform: rotate(45deg);
+}
+
+.modal-picture__close::before {
+  transform: rotate(135deg);
+}
+
+.modal-picture__close:hover::after,
+.modal-picture__close:hover::before {
+  background-color: #1c7ade;
+}
+
+/*Кнопка меню*/
+
+/*В разметке обязательно должна иметь внутренний span */
+
+/*<button class="burger"><span></span></button>*/
+
+.modal-picture {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 7;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(72, 72, 72, 0.71);
+  animation-name: appear;
+  animation-duration: 300ms;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-picture.active {
+  display: flex;
+}
+
+.modal-picture.active .modal-picture__inner,
+.modal-picture__inner-example {
+  max-width: 100%;
+  position: relative;
+  margin: 0 20px;
+  max-height: calc(100vh - 40px);
+  text-align: center;
+  display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: slide-in;
+  animation-duration: 0.5s;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.modal-picture.active .modal-picture__inner {
+  width: 500px;
+  height: auto;
+}
+
+.modal-picture__close {
+  width: 24px;
+  height: 24px;
+  right: 3%;
+  top: 3%;
+  background: white;
+  border-radius: 50%;
+}
+
+.modal-picture__close:after,
+.modal-picture__close:before {
+  height: 2px;
+  right: calc(50% - 12px);
+  padding: 1px;
+}
+
+.modal-picture__picture {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-150px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}

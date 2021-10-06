@@ -1,0 +1,117 @@
+@import "root";
+@import "mixins";
+
+.services {
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  &__description {
+    @extend %section-text;
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__card {
+    width: calc((100% / 3 - 40px));
+    background-color: $bgc;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      background-color: $navy-blue;
+      bottom: 0;
+      right: 0;
+    }
+
+    &:hover &Text,
+    &:hover &Title {
+      transform: translate(0, -80px);
+      opacity: 0;
+    }
+
+    &:hover &Btn {
+      transform: translate(0, -80px);
+      opacity: 1;
+    }
+  }
+
+  &__cardInfo {
+    padding: 30px 25px 40px 25px;
+  }
+
+  &__cardText {
+    color: $black-text;
+    margin-top: 20px;
+    transition: all 0.5s ease;
+    opacity: 1;
+  }
+
+  &__cardImg {
+    width: 100%;
+    height: 217px;
+    object-fit: cover;
+  }
+
+  &__cardTitle {
+    color: $black-text;
+    transition: all 0.5s ease;
+    opacity: 1;
+  }
+
+  &__cardBtn {
+    @extend %blue-btn;
+    opacity: 0;
+    transition: all 0.5s ease;
+    width: 100% !important;
+    margin-top: 20px;
+  }
+
+  &__more {
+    @extend %blue-btn;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .services {
+    &__card {
+      width: calc((100% / 2 - 20px));
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    &__card {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .services {
+    &__cardInfo {
+      padding: 30px 25px 25px 25px;
+    }
+
+    &__more {
+      width: 100%;
+    }
+  }
+}

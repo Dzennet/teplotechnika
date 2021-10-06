@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+/*Кнопка меню*/
+
+/*В разметке обязательно должна иметь внутренний span */
+
+/*<button class="burger"><span></span></button>*/
+
+.reviews {
+  background-color: #f4f4f4;
+  padding: 60px 0;
+}
+
+.reviews__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.reviews__title {
+  width: 100%;
+}
+
+.reviews__quotes {
+  width: 75px;
+  height: 70px;
+  background-image: url(../img/reviews/quotes.svg);
+  margin-bottom: 40px;
+}
+
+.reviews__slider {
+  width: 100%;
+}
+
+.reviews__slide {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.reviews__text {
+  color: #343434;
+  margin-bottom: 60px;
+  width: 60%;
+}
+
+.reviews__author,
+.reviews__service {
+  width: 100%;
+  text-align: center;
+}
+
+.reviews__author {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.reviews__service {
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.reviews__controls {
+  position: absolute;
+  display: flex;
+  width: 90%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .reviews .owl-prev,
+  .reviews .owl-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    color: #1c7ade;
+  }
+
+  .reviews .owl-prev svg path,
+  .reviews .owl-next svg path {
+    fill: #1c7ade;
+  }
+
+  .reviews__text {
+    width: 90%;
+  }
+
+  .reviews__controls {
+    width: 95%;
+  }
+}
